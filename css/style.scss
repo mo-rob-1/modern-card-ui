@@ -1,0 +1,163 @@
+/*Inspired by - https://uidesigndaily.com/posts/sketch-blog-cards-post-article-thumbnail-day-997 
+*/
+
+$background-color: rgb(233, 233, 233);
+$main-font: 'Roboto', sans-serif;
+$card-background-desc: #F3FBFB;
+$last-seen-color: #A196A6;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background-color;
+    font-family: $main-font;
+}
+
+img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.avi {
+    width: 70%;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.container {
+    margin-top: 4rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+
+    @media only screen and (min-width: 1024px) {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        margin-left: 15rem;
+        margin-right: 15rem;
+    }
+
+    @media only screen and (min-width: 1366px) {
+        margin-left: 16rem;
+        margin-right: 16rem;
+    }
+
+    @media only screen and (min-width: 1920px) {
+        margin-left: 30rem;
+        margin-right: 30rem;
+    }
+
+    @media only screen and (min-width: 2560px) {
+        margin-left: 50rem;
+        margin-right: 50rem;
+    }
+}
+
+.cards {
+    @media only screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 36px;
+        grid-row-gap: 36px;
+    }
+
+    .card {
+        background-color: $card-background-desc;
+        margin-bottom: 3rem;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        cursor: pointer;
+        
+        @media only screen and (min-width: 768px) {
+        position: relative;
+        }
+    }
+
+    .card__text-content {
+        background-color: $card-background-desc;
+        padding: 1.5rem;
+        
+        @media only screen and (min-width: 768px) {
+            margin-bottom: 3.5rem;
+        }
+    }
+
+    .card__tag {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: .8rem;
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
+        overflow: hidden;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .card__tag-tech,
+    .card__tag-popular,
+    .card__tag-design {
+        padding-left: .6rem;
+        padding-right: .6rem;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+    }
+
+    .card__tag-tech {
+        background-color: #47BCD4;
+    }
+
+    .card__tag-popular {
+        background-color: #5E76BF;
+    }
+
+    .card__tag-design {
+        background-color: #CD5B9F;
+    }
+
+    .card__title {
+        font-weight: bold;
+        line-height: 1.4;
+        margin-bottom: .6rem;
+    }
+
+    .card__desc {
+        line-height: 1.4;
+        font-size: .9rem;
+        
+        @media only screen and (min-width: 768px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .card__author {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        
+        @media only screen and (min-width: 768px) {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 1rem;
+        }
+    }
+
+    .card__author-name {
+        padding-bottom: 6px;
+    }
+
+    .card__author-last-seen {
+        color: $last-seen-color;
+    }
+}
+
